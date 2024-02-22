@@ -16,6 +16,10 @@ class TypeTableSeeder extends Seeder
      */
     public function run()
     {
-        Type :: factory() -> count(10) -> create();
+        Type :: factory() -> count(10) -> make() -> each(function($type){
+            $project = Project :: inRandomOrder() -> first();
+            $type -> project() -> associate($project);
+            $type -> save();
+        });
     }
 }

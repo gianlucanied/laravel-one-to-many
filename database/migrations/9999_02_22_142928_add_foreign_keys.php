@@ -30,7 +30,7 @@ return new class extends Migration
 
             $table->dropForeign(['project_id']);
 
-            $table -> dropColumn('types_id');
+            $table -> dropColumn('type_id');
         });
     }
 };
