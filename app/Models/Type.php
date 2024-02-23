@@ -11,7 +11,7 @@ class Type extends Model
 {
     use HasFactory;
 
-    public function project() {
+    public function projects() {
 
         return $this -> hasMany(Project :: class);
     }
